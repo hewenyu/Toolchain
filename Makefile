@@ -1,13 +1,13 @@
 # Paths to tools needed in dependencies
-GO := $(shell which go)
-GIT := $(shell which git)
+export GO := $(shell which go)
+export GIT := $(shell which git)
 
 # Build flags
 BUILD_MODULE := $(shell go list -m)
 BUILD_FLAGS = -ldflags "-s -w" 
 
 # Paths to locations, etc
-BUILD_DIR := build
+export BUILD_DIR := $(abspath ./build)
 CMD_DIR := $(wildcard cmd/*)
 
 # Targets
@@ -15,9 +15,14 @@ all: clean cmd
 
 cmd: $(wildcard cmd/*)
 
+
 $(CMD_DIR): dependencies mkdir
 	@echo Build cmd $(notdir $@)
-	@${GO} build ${BUILD_FLAGS} -o ${BUILD_DIR}/$(notdir $@) ./$@
+	@${MAKE} -C $@
+
+# $(CMD_DIR): dependencies mkdir
+# 	@echo Build cmd $(notdir $@)
+# 	@${GO} build ${BUILD_FLAGS} -o ${BUILD_DIR}/$(notdir $@) ./$@
 
 FORCE:
 
