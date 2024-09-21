@@ -15,14 +15,14 @@ func DownloadAndExtract(url string) error {
 
 	// Progress filehandle
 	progress := os.Stdout
-	if *flagQuiet {
-		progress, err := os.Open(os.DevNull)
-		if err != nil {
-			fmt.Fprintln(os.Stderr, "Error:", err)
-			os.Exit(-1)
-		}
-		defer progress.Close()
-	}
+	// if *flagQuiet {
+	// 	progress, err := os.Open(os.DevNull)
+	// 	if err != nil {
+	// 		fmt.Fprintln(os.Stderr, "Error:", err)
+	// 		os.Exit(-1)
+	// 	}
+	// 	defer progress.Close()
+	// }
 
 	// Get output path
 	out, err := GetOut()

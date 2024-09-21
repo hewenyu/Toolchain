@@ -2,7 +2,6 @@ package models
 
 import (
 	"context"
-	"flag"
 	"fmt"
 	"io"
 	"net/http"
@@ -13,8 +12,8 @@ import (
 
 var (
 
-	// Quiet parameter - will not print progress if set
-	flagQuiet = flag.Bool("quiet", false, "Quiet mode")
+// Quiet parameter - will not print progress if set
+// flagQuiet = flag.Bool("quiet", false, "Quiet mode")
 )
 
 // GetOut returns the path to the output directory
