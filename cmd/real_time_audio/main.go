@@ -17,20 +17,29 @@ func main() {
 	}
 	defer portaudio.Terminate()
 
-	default_device, err := portaudio.DefaultInputDevice()
+	allDevices, err := portaudio.Devices()
 	if err != nil {
-		log.Fatalf("Failed to get default input device: %v\n", err)
+		log.Fatalf("Failed to get devices: %v\n", err)
 	}
-	fmt.Printf("Select default input device: %s\n", default_device.Name)
-	param := portaudio.StreamParameters{}
-	param.Input.Device = default_device
-	param.Input.Channels = 1
-	param.Input.Latency = default_device.DefaultLowInputLatency
+	// Print all devices
+	for i, device := range allDevices {
+		fmt.Printf("%d: %s\n", i, device.Name)
+	}
 
+	// input number of the device
+	var deviceNum int
+	fmt.Print("Select the input device number: ")
+	fmt.Scan(&deviceNum)
+
+	param := portaudio.StreamParameters{}
+	param.Input.Device = allDevices[deviceNum]
+	param.Input.Channels = 1
+	param.Input.Latency = allDevices[deviceNum].DefaultLowInputLatency
 	param.SampleRate = 16000
 	param.FramesPerBuffer = 0
 	param.Flags = portaudio.ClipOff
 
+	// Create a new config
 	config := types.NewConfig()
 
 	log.Println("Initializing recognizer (may take several seconds)")

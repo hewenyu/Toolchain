@@ -6,5 +6,5 @@ import "github.com/hewenyu/toolchain/internal/audio/types"
 type Transport interface {
 	Consume() <-chan types.TextData // consume data
 	Connect(Transport) error        // need connect
-	Read() []byte                   // read data
+	SendMessage([]byte) error       // send message
 }
