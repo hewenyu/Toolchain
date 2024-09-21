@@ -5,16 +5,10 @@ import (
 	"log"
 	"strings"
 
-	portaudio "github.com/csukuangfj/portaudio-go"
+	"github.com/hewenyu/toolchain/internal/portaudio"
 	sherpa "github.com/k2-fsa/sherpa-onnx-go/sherpa_onnx"
 	flag "github.com/spf13/pflag"
 )
-
-/*
-#cgo CFLAGS: -I/usr/include
-#cgo LDFLAGS: -L/usr/lib/x86_64-linux-gnu -lportaudio
-#include <portaudio.h>
-*/
 
 func main() {
 	err := portaudio.Initialize()
@@ -46,6 +40,7 @@ func main() {
 	flag.StringVar(&config.ModelConfig.Paraformer.Encoder, "paraformer-encoder", "", "Path to the paraformer encoder model")
 	flag.StringVar(&config.ModelConfig.Paraformer.Decoder, "paraformer-decoder", "", "Path to the paraformer decoder model")
 	flag.StringVar(&config.ModelConfig.Tokens, "tokens", "", "Path to the tokens file")
+
 	flag.IntVar(&config.ModelConfig.NumThreads, "num-threads", 1, "Number of threads for computing")
 	flag.IntVar(&config.ModelConfig.Debug, "debug", 0, "Whether to show debug message")
 	flag.StringVar(&config.ModelConfig.ModelType, "model-type", "", "Optional. Used for loading the model in a faster way")

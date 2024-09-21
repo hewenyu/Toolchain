@@ -3,7 +3,6 @@ module github.com/hewenyu/toolchain
 go 1.20
 
 require (
-	github.com/csukuangfj/portaudio-go v1.0.7
 	github.com/gin-gonic/gin v1.10.0
 	github.com/k2-fsa/sherpa-onnx-go v1.8.9
 	github.com/pion/rtp v1.8.6
