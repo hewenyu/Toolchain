@@ -1,10 +1,14 @@
 module github.com/hewenyu/toolchain
 
-go 1.22.3
+go 1.20
 
 require (
+	github.com/csukuangfj/portaudio-go v1.0.7
 	github.com/gin-gonic/gin v1.10.0
+	github.com/k2-fsa/sherpa-onnx-go v1.8.9
 	github.com/pion/rtp v1.8.6
+	github.com/spf13/pflag v1.0.5
+	github.com/youpy/go-wav v0.3.2
 )
 
 require (
@@ -19,6 +23,9 @@ require (
 	github.com/go-playground/validator/v10 v10.20.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
+	github.com/k2-fsa/sherpa-onnx-go-linux v1.10.27 // indirect
+	github.com/k2-fsa/sherpa-onnx-go-macos v1.10.27 // indirect
+	github.com/k2-fsa/sherpa-onnx-go-windows v1.10.27 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.7 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
@@ -28,6 +35,8 @@ require (
 	github.com/pion/randutil v0.1.0 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
+	github.com/youpy/go-riff v0.1.0 // indirect
+	github.com/zaf/g711 v0.0.0-20190814101024-76a4a538f52b // indirect
 	golang.org/x/arch v0.8.0 // indirect
 	golang.org/x/crypto v0.23.0 // indirect
 	golang.org/x/net v0.25.0 // indirect
