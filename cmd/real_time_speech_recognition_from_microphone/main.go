@@ -5,7 +5,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/hewenyu/toolchain/internal/portaudio"
+	portaudio "github.com/gordonklaus/portaudio"
 	sherpa "github.com/k2-fsa/sherpa-onnx-go/sherpa_onnx"
 	flag "github.com/spf13/pflag"
 )

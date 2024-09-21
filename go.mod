@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/gin-gonic/gin v1.10.0
+	github.com/gordonklaus/portaudio v0.0.0-20230709114228-aafa478834f5
 	github.com/k2-fsa/sherpa-onnx-go v1.8.9
 	github.com/pion/rtp v1.8.6
 	github.com/spf13/pflag v1.0.5
