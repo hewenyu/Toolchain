@@ -10,6 +10,32 @@ import (
 	"fyne.io/fyne/v2/widget"
 )
 
+// var (
+// 	outputDevice *portaudio.DeviceInfo
+// 	inputDevice  *portaudio.DeviceInfo
+// )
+
+// func init() {
+// 	err := portaudio.Initialize()
+// 	if err != nil {
+// 		panic(err)
+// 		// log.Fatalf("Unable to initialize portaudio: %v\n", err)
+// 	}
+// 	defer portaudio.Terminate()
+
+// 	outputDevice, err = portaudio.DefaultOutputDevice()
+// 	if err != nil {
+// 		panic(err)
+// 		// log.Fatalf("Failed to get devices: %v\n", err)
+// 	}
+// 	inputDevice, err = portaudio.DefaultInputDevice()
+// 	if err != nil {
+// 		panic(err)
+// 		// log.Fatalf("Failed to get devices: %v\n", err)
+// 	}
+
+// }
+
 func wirteText(textChan chan string) {
 	textChan <- "Hello, World!"
 	for {
@@ -53,6 +79,11 @@ func main() {
 			history.Refresh()
 		}
 	}()
+
+	// go func() {
+	// 	textChan <- fmt.Sprintf("%v\n", outputDevice.Name)
+	// 	textChan <- fmt.Sprintf("%v\n", inputDevice.Name)
+	// }()
 
 	w.ShowAndRun()
 }
