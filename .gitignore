@@ -17,6 +17,8 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
+
+sherpa-onnx-nemo-ctc-en-conformer-medium**
 # build dir
 build
 # Go workspace file
